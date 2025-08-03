@@ -26,19 +26,19 @@ export function About() {
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <p className="text-sm text-muted-foreground">Full Name</p>
-                    <p className="font-medium">Your Full Name</p>
+                    <p className="font-medium">Royce Burghardt</p>
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium">Your City, Country</p>
+                    <p className="text-sm text-muted-foreground">69121</p>
+                    <p className="font-medium">Heidelberg, Germany</p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">your.email@example.com</p>
+                    <p className="font-medium">burghardtroyce@gmail.com</p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium">+1 (555) 123-4567</p>
+                    <p className="font-medium">+49 - 176/34212462</p>
                   </div>
                 </div>
               </CardContent>
@@ -54,8 +54,8 @@ export function About() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="border-l-2 border-primary pl-4">
-                    <h4 className="font-semibold">Current Position</h4>
-                    <p className="text-sm text-muted-foreground">Company Name • 2022 - Present</p>
+                    <h4 className="font-semibold">Web Developer</h4>
+                    <p className="text-sm text-muted-foreground">Freelancer</p>
                     <p className="text-sm mt-2">Brief description of your current role and responsibilities.</p>
                   </div>
                   <div className="border-l-2 border-muted pl-4">

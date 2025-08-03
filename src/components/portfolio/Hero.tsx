@@ -22,10 +22,10 @@ export function Hero() {
 
           {/* Main Content */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-in-left">
-            Your Name
+            Royce Burghardt
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
-            Full Stack Developer & Designer
+            Full Stack Developer
           </p>
           <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
             Passionate about creating beautiful, functional web applications that solve real-world problems. 

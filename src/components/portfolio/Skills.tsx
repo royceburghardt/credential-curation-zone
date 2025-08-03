@@ -20,7 +20,6 @@ export function Skills() {
       icon: <Database className="h-5 w-5" />,
       skills: [
         { name: "Node.js", level: 82 },
-        { name: "Python", level: 75 },
         { name: "PostgreSQL", level: 78 },
         { name: "MongoDB", level: 70 }
       ]
