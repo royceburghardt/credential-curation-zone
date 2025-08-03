@@ -3,7 +3,7 @@ import { Hero } from "@/components/portfolio/Hero";
 import { About } from "@/components/portfolio/About";
 import { Skills } from "@/components/portfolio/Skills";
 import { Projects } from "@/components/portfolio/Projects";
-import { Certificates } from "@/components/portfolio/Certificates";
+import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
 
 const Index = () => {
@@ -28,8 +28,8 @@ const Index = () => {
           <Projects />
         </section>
         
-        <section id="certificates">
-          <Certificates />
+        <section id="education">
+          <Education />
         </section>
         
         <section id="contact">
@@ -41,7 +41,7 @@ const Index = () => {
       <footer className="bg-foreground text-background py-8">
         <div className="container mx-auto px-6 text-center">
           <p className="text-sm">
-            © 2024 Your Name. Built with React, TypeScript, and Tailwind CSS.
+            © 2024 Royce Burghardt. Built with React, TypeScript, and Tailwind CSS.
           </p>
         </div>
       </footer>

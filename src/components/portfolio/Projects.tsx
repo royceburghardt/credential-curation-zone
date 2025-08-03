@@ -6,39 +6,30 @@ import { ExternalLink, Github, Plus } from "lucide-react";
 export function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and admin dashboard.",
+      title: "Coffee Shop E-Commerce",
+      description: "A modern coffee shop e-commerce platform with product catalog, shopping cart functionality, and responsive design built during my fullstack training.",
       image: "/api/placeholder/400/250",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
-      demo: "#",
+      technologies: ["React", "Node.js", "MongoDB", "CSS"],
+      github: "https://github.com/pablosabio/ecommerce-fp",
+      demo: "https://coffee-shop-ten-kappa.vercel.app",
       featured: true
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      title: "Next.js Todo Application",
+      description: "A task management application built with Next.js featuring CRUD operations, modern UI design, and efficient state management.",
       image: "/api/placeholder/400/250",
-      technologies: ["Vue.js", "Socket.io", "Express", "PostgreSQL"],
-      github: "#",
-      demo: "#",
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+      github: "https://github.com/royceburghardt",
+      demo: "https://next-js-todo-app-royce-o9vu.vercel.app/",
       featured: true
     },
     {
-      title: "Portfolio Website",
-      description: "A responsive portfolio website built with modern technologies, featuring smooth animations and optimized performance.",
+      title: "Emoji Picker Component",
+      description: "An interactive emoji picker component with search functionality and category filtering, demonstrating modern React development practices.",
       image: "/api/placeholder/400/250", 
-      technologies: ["Next.js", "Tailwind", "Framer Motion"],
-      github: "#",
-      demo: "#",
-      featured: false
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A weather dashboard with location-based forecasts, interactive maps, and historical weather data visualization.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "Chart.js", "OpenWeather API"],
-      github: "#",
-      demo: "#",
+      technologies: ["React", "JavaScript", "CSS", "Vercel"],
+      github: "https://github.com/royceburghardt",
+      demo: "https://emoji-picker-xi.vercel.app/",
       featured: false
     }
   ];

@@ -34,11 +34,11 @@ export function About() {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">burghardtroyce@gmail.com</p>
+                    <p className="font-medium">royceburghardt@yahoo.com</p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium">+49 - 176/34212462</p>
+                    <p className="font-medium">+49 176 34212462</p>
                   </div>
                 </div>
               </CardContent>
@@ -54,14 +54,14 @@ export function About() {
               <CardContent>
                 <div className="space-y-4">
                   <div className="border-l-2 border-primary pl-4">
-                    <h4 className="font-semibold">Web Developer</h4>
-                    <p className="text-sm text-muted-foreground">Freelancer</p>
-                    <p className="text-sm mt-2">Brief description of your current role and responsibilities.</p>
+                    <h4 className="font-semibold">Fullstack Web Developer</h4>
+                    <p className="text-sm text-muted-foreground">Digital Career Institut • 05.2024 - 07.2025</p>
+                    <p className="text-sm mt-2">Built a solid foundation in HTML5, CSS, JavaScript, Vue.js, React, and various frameworks. Completed team React final project and fullstack project with frontend, backend, and database.</p>
                   </div>
                   <div className="border-l-2 border-muted pl-4">
-                    <h4 className="font-semibold">Previous Position</h4>
-                    <p className="text-sm text-muted-foreground">Previous Company • 2020 - 2022</p>
-                    <p className="text-sm mt-2">Brief description of your previous role and achievements.</p>
+                    <h4 className="font-semibold">German C1 Certification</h4>
+                    <p className="text-sm text-muted-foreground">Lingoda Language Academy • 05.2024 - 05.2025</p>
+                    <p className="text-sm mt-2">Enhanced vocabulary and improved ability to formulate complex sentences more precisely and efficiently.</p>
                   </div>
                 </div>
               </CardContent>
@@ -76,32 +76,32 @@ export function About() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed mb-4">
-                  I'm a passionate developer with a love for creating digital experiences that make a difference. 
-                  My journey in tech started [your story here] and has led me through various exciting projects 
-                  and collaborations.
+                  I recently completed my training as a web developer and am eager to establish myself in this field. 
+                  Starting with UI design fundamentals, I progressed through Single Page Applications and backend development, 
+                  building expertise in modern frameworks and technologies.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  When I'm not coding, you can find me [your hobbies/interests]. I believe in continuous 
-                  learning and staying up-to-date with the latest technologies and industry trends.
+                  I'm a dedicated professional who embraces challenges and continuously acquires new skills. 
+                  I believe in teamwork, empathy, and maintaining professional yet relaxed relationships with colleagues and supervisors.
                 </p>
               </CardContent>
             </Card>
 
             <div className="grid grid-cols-2 gap-4">
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">5+</div>
-                <p className="text-sm text-muted-foreground">Years Experience</p>
+                <div className="text-3xl font-bold text-primary mb-2">3</div>
+                <p className="text-sm text-muted-foreground">Languages</p>
               </Card>
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">20+</div>
+                <div className="text-3xl font-bold text-primary mb-2">4+</div>
                 <p className="text-sm text-muted-foreground">Projects Completed</p>
               </Card>
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">10+</div>
-                <p className="text-sm text-muted-foreground">Certificates</p>
+                <div className="text-3xl font-bold text-primary mb-2">3</div>
+                <p className="text-sm text-muted-foreground">Certifications</p>
               </Card>
               <Card className="shadow-card hover:shadow-elegant transition-all duration-300 text-center p-6">
-                <div className="text-3xl font-bold text-primary mb-2">15+</div>
+                <div className="text-3xl font-bold text-primary mb-2">12+</div>
                 <p className="text-sm text-muted-foreground">Technologies</p>
               </Card>
             </div>

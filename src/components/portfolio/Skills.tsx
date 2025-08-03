@@ -9,47 +9,48 @@ export function Skills() {
       title: "Frontend Development",
       icon: <Code className="h-5 w-5" />,
       skills: [
-        { name: "React", level: 90 },
-        { name: "TypeScript", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "Tailwind CSS", level: 88 }
+        { name: "HTML5/CSS", level: 85 },
+        { name: "JavaScript", level: 80 },
+        { name: "TypeScript", level: 75 },
+        { name: "React", level: 80 },
+        { name: "Vue.js", level: 75 },
+        { name: "Tailwind CSS", level: 85 }
       ]
     },
     {
       title: "Backend Development", 
       icon: <Database className="h-5 w-5" />,
       skills: [
-        { name: "Node.js", level: 82 },
-        { name: "PostgreSQL", level: 78 },
-        { name: "MongoDB", level: 70 }
+        { name: "Node.js", level: 75 },
+        { name: "MongoDB", level: 70 },
+        { name: "SQL", level: 65 }
       ]
     },
     {
-      title: "Design & UI/UX",
+      title: "Design & Development Tools",
       icon: <Palette className="h-5 w-5" />,
       skills: [
-        { name: "Figma", level: 85 },
-        { name: "Adobe Creative Suite", level: 75 },
-        { name: "UI/UX Design", level: 80 },
-        { name: "Prototyping", level: 78 }
+        { name: "Figma", level: 80 },
+        { name: "Bootstrap", level: 75 },
+        { name: "Next.js", level: 70 }
       ]
     },
     {
-      title: "Tools & Others",
+      title: "Languages & Soft Skills",
       icon: <Globe className="h-5 w-5" />,
       skills: [
-        { name: "Git & GitHub", level: 90 },
-        { name: "Docker", level: 70 },
-        { name: "AWS", level: 65 },
-        { name: "CI/CD", level: 72 }
+        { name: "German (C1)", level: 85 },
+        { name: "English (Native)", level: 100 },
+        { name: "Romanian (B2)", level: 70 },
+        { name: "GitHub", level: 80 }
       ]
     }
   ];
 
   const technologies = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "Node.js", 
-    "Python", "Django", "PostgreSQL", "MongoDB", "Docker", "AWS", 
-    "Tailwind CSS", "Sass", "Figma", "Git", "Linux", "Express.js"
+    "HTML5/CSS", "JavaScript", "TypeScript", "React", "Vue.js", "Next.js", 
+    "Node.js", "MongoDB", "SQL", "Tailwind CSS", "Bootstrap", "Figma", 
+    "GitHub", "Teamwork", "Adaptability", "Creativity", "Time Management"
   ];
 
   return (

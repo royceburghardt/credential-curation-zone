@@ -29,7 +29,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">your.email@example.com</p>
+                    <p className="text-muted-foreground">royceburghardt@yahoo.com</p>
                   </div>
                 </div>
 
@@ -39,7 +39,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-muted-foreground">+49 176 34212462</p>
                   </div>
                 </div>
 
@@ -49,7 +49,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="text-muted-foreground">Your City, Country</p>
+                    <p className="text-muted-foreground">Heidelberg, Germany</p>
                   </div>
                 </div>
               </CardContent>
@@ -83,7 +83,7 @@ export function Contact() {
                   <span className="font-medium">Available for new projects</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  I'm currently accepting new freelance projects and full-time opportunities.
+                  I'm actively seeking new opportunities to start my career as a fullstack developer.
                 </p>
               </CardContent>
             </Card>

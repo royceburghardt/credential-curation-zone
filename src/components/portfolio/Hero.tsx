@@ -28,8 +28,8 @@ export function Hero() {
             Full Stack Developer
           </p>
           <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
-            Passionate about creating beautiful, functional web applications that solve real-world problems. 
-            I specialize in modern technologies and clean, user-centered design.
+            I recently completed my training as a web developer and want to establish myself in this field. 
+            I'm a dedicated professional who takes on challenges and eagerly acquires new skills for professional development.
           </p>
 
           {/* CTA Buttons */}
