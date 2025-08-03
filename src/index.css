@@ -17,9 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 245 58% 51%;
+    --primary: 220 70% 55%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 245 70% 65%;
+    --primary-glow: 210 80% 70%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 270 95% 75%;
+    --accent: 200 85% 70%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -35,13 +35,13 @@ All colors MUST be HSL.
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 245 58% 51%;
+    --ring: 220 70% 55%;
 
     /* Portfolio-specific design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(245 58% 51%), hsl(270 95% 75%));
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(245 58% 98%));
-    --shadow-elegant: 0 10px 30px -10px hsl(245 58% 51% / 0.3);
-    --shadow-glow: 0 0 40px hsl(245 70% 65% / 0.4);
+    --hero-gradient: linear-gradient(135deg, hsl(220 70% 55%), hsl(200 85% 70%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 70% 98%));
+    --shadow-elegant: 0 10px 30px -10px hsl(220 70% 55% / 0.3);
+    --shadow-glow: 0 0 40px hsl(210 80% 70% / 0.4);
     --shadow-card: 0 4px 20px -4px hsl(245 58% 51% / 0.1);
     
     /* Animation tokens */
