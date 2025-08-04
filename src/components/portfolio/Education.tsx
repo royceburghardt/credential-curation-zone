@@ -27,6 +27,30 @@ export function Education() {
       type: "Professional Development",
       description: "Learned skills and tools to master daily challenges and various environments of future work, maintaining professional yet relaxed relationships with colleagues and supervisors.",
       skills: ["Professional Communication", "Workplace Skills", "Team Collaboration"]
+    },
+    {
+      title: "Carpenter Retraining (Umschullung zum Tischler)",
+      institution: "UÄZ Wittlich/Schreinerei Cullmann Traben-Trarbach",
+      period: "02.1999 - 07.2002",
+      type: "Professional Training",
+      description: "Learned all necessary skills for general carpentry and modern work methods with CNC technology. Acquired knowledge and advantages to work competently and very precisely.",
+      skills: ["Carpentry", "CNC Technology", "Precision Work", "Modern Manufacturing"]
+    },
+    {
+      title: "Munitions Systems Specialist",
+      institution: "General Dynamics U.S.A.",
+      period: "10.1988 - 10.1989",
+      type: "Military Training",
+      description: "Learned programming of the first GPS-guided missiles and bombs to communicate with three satellites in space and exchange coordinate information. Also acquired first basic knowledge in handling digital tools and early cybersecurity.",
+      skills: ["GPS Programming", "Satellite Communication", "Digital Tools", "Cybersecurity", "Precision Systems"]
+    },
+    {
+      title: "High School Diploma",
+      institution: "Belle Plaine High School, Belle Plaine Kansas U.S.A.",
+      period: "08.1984 - 05.1988",
+      type: "Secondary Education",
+      description: "Received a general education covering everything from history to various natural sciences, different mathematical areas, and various forms of government.",
+      skills: ["General Education", "Mathematics", "Natural Sciences", "History", "Government Studies"]
     }
   ];
 
