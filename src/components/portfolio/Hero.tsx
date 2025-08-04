@@ -1,7 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
+  const { t } = useLanguage();
+
+  const scrollToContact = () => {
+    const element = document.querySelector('#contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center bg-hero-gradient relative overflow-hidden">
       {/* Background decorative elements */}
@@ -22,21 +32,24 @@ export function Hero() {
 
           {/* Main Content */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-in-left">
-            Royce Burghardt
+            {t('hero.name')}
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-slide-in-left" style={{ animationDelay: '0.2s' }}>
-            Full Stack Developer
+            {t('hero.title')}
           </p>
           <p className="text-lg text-white/80 mb-12 max-w-3xl mx-auto animate-slide-in-left" style={{ animationDelay: '0.4s' }}>
-            I recently completed my training as a web developer and want to establish myself in this field. 
-            I'm a dedicated professional who takes on challenges and eagerly acquires new skills for professional development.
+            {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-slide-in-left" style={{ animationDelay: '0.6s' }}>
-            <Button size="lg" className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 shadow-elegant">
+            <Button 
+              size="lg" 
+              onClick={scrollToContact}
+              className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 shadow-elegant"
+            >
               <Mail className="mr-2 h-5 w-5" />
-              Get In Touch
+              {t('hero.getInTouch')}
             </Button>
           </div>
 
