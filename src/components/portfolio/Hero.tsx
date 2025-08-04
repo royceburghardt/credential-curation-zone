@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail } from "lucide-react";
+import { ArrowDown, Download, Mail } from "lucide-react";
 
 export function Hero() {
   return (
@@ -37,6 +37,10 @@ export function Hero() {
             <Button size="lg" className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 shadow-elegant">
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
+            </Button>
+            <Button variant="outline" size="lg" className="bg-transparent border-white/30 text-white hover:bg-white/10">
+              <Download className="mr-2 h-5 w-5" />
+              Download CV
             </Button>
           </div>
 
