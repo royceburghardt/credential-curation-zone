@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Languages } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Menu, X } from "lucide-react";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +16,13 @@ export function Navigation() {
   }, []);
 
   const navItems = [
-    { name: t('nav.home'), href: '#home' },
-    { name: t('nav.about'), href: '#about' },
-    { name: t('nav.skills'), href: '#skills' },
-    { name: t('nav.education'), href: '#education' },
-    { name: t('nav.experience'), href: '#experience' },
-    { name: t('nav.projects'), href: '#projects' },
-    { name: t('nav.contact'), href: '#contact' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Education', href: '#education' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -63,39 +61,17 @@ export function Navigation() {
                 {item.name}
               </button>
             ))}
-            
-            {/* Language Toggle */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
-              className={`${isScrolled ? 'text-foreground' : 'text-white/90'}`}
-            >
-              <Languages className="mr-1 h-4 w-4" />
-              {language.toUpperCase()}
-            </Button>
           </div>
 
-          {/* Mobile Navigation - Language Toggle and Menu */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'de' : 'en')}
-              className={`${isScrolled ? 'text-foreground' : 'text-white/90'}`}
-            >
-              <Languages className="mr-1 h-4 w-4" />
-              {language.toUpperCase()}
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className={`${isScrolled ? 'text-foreground' : 'text-white'}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </Button>
-          </div>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`md:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}

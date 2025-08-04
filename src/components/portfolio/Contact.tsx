@@ -1,71 +1,17 @@
-import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 export function Contact() {
-  const { t } = useLanguage();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const { data, error } = await supabase.functions.invoke('send-email', {
-        body: formData
-      });
-
-      if (error) throw error;
-
-      toast({
-        title: "Success!",
-        description: t('contact.form.success'),
-      });
-
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: t('contact.form.error'),
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">{t('contact.title')}</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Let's Connect</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t('contact.description')}
+            Ready to work together? I'd love to hear about your project and how I can help bring it to life.
           </p>
         </div>
 
@@ -74,7 +20,7 @@ export function Contact() {
           <div className="space-y-8">
             <Card className="shadow-card">
               <CardHeader>
-                <CardTitle>{t('contact.title')}</CardTitle>
+                <CardTitle>Get In Touch</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -82,7 +28,7 @@ export function Contact() {
                     <Mail className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">{t('contact.email')}</p>
+                    <p className="font-medium">Email</p>
                     <p className="text-muted-foreground">royceburghardt@yahoo.com</p>
                   </div>
                 </div>
@@ -92,7 +38,7 @@ export function Contact() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">{t('contact.phone')}</p>
+                    <p className="font-medium">Phone</p>
                     <p className="text-muted-foreground">+49 176 34212462</p>
                   </div>
                 </div>
@@ -102,7 +48,7 @@ export function Contact() {
                     <MapPin className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">{t('contact.location')}</p>
+                    <p className="font-medium">Location</p>
                     <p className="text-muted-foreground">Heidelberg, Germany</p>
                   </div>
                 </div>
@@ -134,7 +80,7 @@ export function Contact() {
               <CardContent className="pt-6">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="font-medium">{t('contact.availability')}</span>
+                  <span className="font-medium">Available for new projects</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
                   I'm actively seeking new opportunities to start my career as a fullstack developer.
@@ -149,73 +95,39 @@ export function Contact() {
               <CardTitle>Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">{t('contact.form.name')}</label>
-                    <Input 
-                      name="firstName"
-                      value={formData.firstName}
-                      onChange={handleInputChange}
-                      placeholder="John" 
-                      required
-                    />
+                    <label className="text-sm font-medium">First Name</label>
+                    <Input placeholder="John" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Last Name</label>
-                    <Input 
-                      name="lastName"
-                      value={formData.lastName}
-                      onChange={handleInputChange}
-                      placeholder="Doe" 
-                      required
-                    />
+                    <Input placeholder="Doe" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">{t('contact.form.email')}</label>
-                  <Input 
-                    type="email" 
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    placeholder="john.doe@example.com" 
-                    required
-                  />
+                  <label className="text-sm font-medium">Email</label>
+                  <Input type="email" placeholder="john.doe@example.com" />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">{t('contact.form.subject')}</label>
-                  <Input 
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="Project Inquiry" 
-                    required
-                  />
+                  <label className="text-sm font-medium">Subject</label>
+                  <Input placeholder="Project Inquiry" />
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">{t('contact.form.message')}</label>
+                  <label className="text-sm font-medium">Message</label>
                   <Textarea 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
                     placeholder="Tell me about your project..."
                     className="min-h-[120px] resize-none"
-                    required
                   />
                 </div>
 
-                <Button 
-                  type="submit" 
-                  className="w-full" 
-                  size="lg"
-                  disabled={isSubmitting}
-                >
+                <Button className="w-full" size="lg">
                   <Send className="mr-2 h-5 w-5" />
-                  {isSubmitting ? 'Sending...' : t('contact.form.send')}
+                  Send Message
                 </Button>
               </form>
             </CardContent>
