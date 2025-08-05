@@ -48,7 +48,7 @@ export function Contact() {
     try {
       // Simple form submission (no backend for now)
       console.log('Form submitted:', formData);
-
+      
       toast({
         title: "Success!",
         description: t('contact.form.success'),
@@ -63,7 +63,7 @@ export function Contact() {
       });
     } catch (error) {
       toast({
-        title: "Error",
+        title: "Error", 
         description: t('contact.form.error'),
         variant: "destructive",
       });
