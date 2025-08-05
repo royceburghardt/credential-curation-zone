@@ -1,9 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
-  const { t } = useLanguage();
+  // Simple translation function as fallback
+  const t = (key: string): string => {
+    const translations: Record<string, string> = {
+      'hero.name': 'Royce Burghardt',
+      'hero.title': 'Full Stack Developer',
+      'hero.description': 'I recently completed my training as a web developer and want to establish myself in this field. I\'m a dedicated professional who takes on challenges and eagerly acquires new skills for professional development.',
+      'hero.getInTouch': 'Get In Touch',
+    };
+    return translations[key] || key;
+  };
 
   const scrollToContact = () => {
     const element = document.querySelector('#contact');

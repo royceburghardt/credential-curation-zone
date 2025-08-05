@@ -4,12 +4,28 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 export function Contact() {
-  const { t } = useLanguage();
+  // Simple translation function as fallback
+  const t = (key: string): string => {
+    const translations: Record<string, string> = {
+      'contact.title': 'Get In Touch',
+      'contact.description': 'Let\'s work together on your next project',
+      'contact.email': 'Email',
+      'contact.phone': 'Phone',
+      'contact.location': 'Location',
+      'contact.availability': 'Available for new projects',
+      'contact.form.name': 'Your Name',
+      'contact.form.email': 'Your Email',
+      'contact.form.subject': 'Subject',
+      'contact.form.message': 'Your Message',
+      'contact.form.send': 'Send Message',
+      'contact.form.success': 'Message sent successfully!',
+      'contact.form.error': 'Failed to send message. Please try again.',
+    };
+    return translations[key] || key;
+  };
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -30,11 +46,8 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const { data, error } = await supabase.functions.invoke('send-email', {
-        body: formData
-      });
-
-      if (error) throw error;
+      // Simple form submission (no backend for now)
+      console.log('Form submitted:', formData);
 
       toast({
         title: "Success!",
