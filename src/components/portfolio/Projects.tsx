@@ -2,8 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github, Plus } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Projects() {
+  const { t } = useLanguage();
   const projects = [
     {
       title: "Coffee Shop E-Commerce",
@@ -135,7 +137,7 @@ export function Projects() {
         <div className="text-center">
           <Button variant="outline" size="lg" className="group">
             <Plus className="mr-2 h-5 w-5 group-hover:rotate-90 transition-transform" />
-            Add New Project
+            {t('projects.addProject')}
           </Button>
         </div>
       </div>

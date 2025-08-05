@@ -1,36 +1,12 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Languages } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<'en' | 'de'>('en');
-
-  // Simple translation function as fallback
-  const t = (key: string): string => {
-    const translations: Record<string, Record<string, string>> = {
-      en: {
-        'nav.home': 'Home',
-        'nav.about': 'About',
-        'nav.skills': 'Skills',
-        'nav.education': 'Education',
-        'nav.experience': 'Experience',
-        'nav.projects': 'Projects',
-        'nav.contact': 'Contact',
-      },
-      de: {
-        'nav.home': 'Startseite',
-        'nav.about': 'Über mich',
-        'nav.skills': 'Fähigkeiten',
-        'nav.education': 'Bildung',
-        'nav.experience': 'Erfahrung',
-        'nav.projects': 'Projekte',
-        'nav.contact': 'Kontakt',
-      }
-    };
-    return translations[language]?.[key] || key;
-  };
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {

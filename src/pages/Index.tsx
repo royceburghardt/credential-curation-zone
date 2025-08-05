@@ -6,8 +6,11 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Education } from "@/components/portfolio/Education";
 import { Contact } from "@/components/portfolio/Contact";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -46,7 +49,7 @@ const Index = () => {
       <footer className="bg-foreground text-background py-8">
         <div className="container mx-auto px-6 text-center">
           <p className="text-sm">
-            © 2024 Royce Burghardt. Built with React, TypeScript, and Tailwind CSS.
+            {t('footer.copyright')}
           </p>
         </div>
       </footer>

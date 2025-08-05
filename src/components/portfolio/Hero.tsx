@@ -1,17 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Hero() {
-  // Simple translation function as fallback
-  const t = (key: string): string => {
-    const translations: Record<string, string> = {
-      'hero.name': 'Royce Burghardt',
-      'hero.title': 'Full Stack Developer',
-      'hero.description': 'I recently completed my training as a web developer and want to establish myself in this field. I\'m a dedicated professional who takes on challenges and eagerly acquires new skills for professional development.',
-      'hero.getInTouch': 'Get In Touch',
-    };
-    return translations[key] || key;
-  };
+  const { t } = useLanguage();
 
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
@@ -33,7 +25,7 @@ export function Hero() {
           <div className="mb-8 flex justify-center">
             <div className="w-32 h-32 bg-white/20 backdrop-blur-sm rounded-full border-4 border-white/30 flex items-center justify-center shadow-glow">
               <div className="w-24 h-24 bg-white/30 rounded-full flex items-center justify-center">
-                <span className="text-white/80 text-sm font-medium">Your Photo</span>
+                <span className="text-white/80 text-sm font-medium">{t('hero.photoPlaceholder')}</span>
               </div>
             </div>
           </div>

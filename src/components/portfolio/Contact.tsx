@@ -4,28 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
 
 export function Contact() {
-  // Simple translation function as fallback
-  const t = (key: string): string => {
-    const translations: Record<string, string> = {
-      'contact.title': 'Get In Touch',
-      'contact.description': 'Let\'s work together on your next project',
-      'contact.email': 'Email',
-      'contact.phone': 'Phone',
-      'contact.location': 'Location',
-      'contact.availability': 'Available for new projects',
-      'contact.form.name': 'Your Name',
-      'contact.form.email': 'Your Email',
-      'contact.form.subject': 'Subject',
-      'contact.form.message': 'Your Message',
-      'contact.form.send': 'Send Message',
-      'contact.form.success': 'Message sent successfully!',
-      'contact.form.error': 'Failed to send message. Please try again.',
-    };
-    return translations[key] || key;
-  };
+  const { t } = useLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -125,7 +108,7 @@ export function Contact() {
             {/* Social Links */}
             <Card className="shadow-card">
               <CardHeader>
-                <CardTitle>Follow Me</CardTitle>
+                <CardTitle>{t('contact.followMe')}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4">
@@ -150,7 +133,7 @@ export function Contact() {
                   <span className="font-medium">{t('contact.availability')}</span>
                 </div>
                 <p className="text-sm text-muted-foreground mt-2">
-                  I'm actively seeking new opportunities to start my career as a fullstack developer.
+                  {t('contact.availabilityText')}
                 </p>
               </CardContent>
             </Card>
@@ -159,13 +142,13 @@ export function Contact() {
           {/* Contact Form */}
           <Card className="shadow-card">
             <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
+              <CardTitle>{t('contact.sendMessage')}</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">{t('contact.form.name')}</label>
+                    <label className="text-sm font-medium">{t('contact.form.firstName')}</label>
                     <Input 
                       name="firstName"
                       value={formData.firstName}
@@ -175,7 +158,7 @@ export function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium">Last Name</label>
+                    <label className="text-sm font-medium">{t('contact.form.lastName')}</label>
                     <Input 
                       name="lastName"
                       value={formData.lastName}
@@ -228,7 +211,7 @@ export function Contact() {
                   disabled={isSubmitting}
                 >
                   <Send className="mr-2 h-5 w-5" />
-                  {isSubmitting ? 'Sending...' : t('contact.form.send')}
+                  {isSubmitting ? t('contact.form.sending') : t('contact.form.send')}
                 </Button>
               </form>
             </CardContent>

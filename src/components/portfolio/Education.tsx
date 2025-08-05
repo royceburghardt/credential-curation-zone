@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Award, ExternalLink } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Education() {
+  const { t } = useLanguage();
   const education = [
     {
       title: "Fullstack Web Developer",
@@ -58,9 +60,9 @@ export function Education() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Education & Training</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('education.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My educational journey and professional development
+            {t('education.description')}
           </p>
         </div>
 

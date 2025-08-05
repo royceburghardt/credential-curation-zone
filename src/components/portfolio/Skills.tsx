@@ -2,11 +2,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Code, Palette, Database, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Skills() {
+  const { t } = useLanguage();
   const skillCategories = [
     {
-      title: "Frontend Development",
+      title: t('skills.frontend'),
       icon: <Code className="h-5 w-5" />,
       skills: [
         { name: "HTML5/CSS", level: 85 },
@@ -18,7 +20,7 @@ export function Skills() {
       ]
     },
     {
-      title: "Backend Development", 
+      title: t('skills.backend'), 
       icon: <Database className="h-5 w-5" />,
       skills: [
         { name: "Node.js", level: 75 },
@@ -27,7 +29,7 @@ export function Skills() {
       ]
     },
     {
-      title: "Design & Development Tools",
+      title: t('skills.tools'),
       icon: <Palette className="h-5 w-5" />,
       skills: [
         { name: "Figma", level: 80 },
@@ -57,9 +59,9 @@ export function Skills() {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Skills & Technologies</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('skills.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and expertise
+            {t('skills.description')}
           </p>
         </div>
 

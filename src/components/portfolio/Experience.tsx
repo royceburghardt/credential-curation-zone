@@ -1,8 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Briefcase } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function Experience() {
+  const { t } = useLanguage();
   const workExperience = [
     {
       title: "Hausmeister in Produktion",
@@ -86,9 +88,9 @@ export function Experience() {
     <section className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Work Experience</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-4">{t('experience.title')}</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            My professional journey across various industries and roles
+            {t('experience.description')}
           </p>
         </div>
 
