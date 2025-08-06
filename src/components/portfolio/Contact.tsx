@@ -29,8 +29,17 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Simple form submission (no backend for now)
-      console.log('Form submitted:', formData);
+      const response = await fetch('/functions/v1/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
       
       toast({
         title: "Success!",
@@ -45,6 +54,7 @@ export function Contact() {
         message: ''
       });
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: "Error", 
         description: t('contact.form.error'),
