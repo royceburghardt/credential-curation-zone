@@ -27,7 +27,7 @@ export function Hero() {
               <img 
                 src="/lovable-uploads/44d2a7ba-70f4-483e-8c79-def71e885bac.png"
                 alt="Professional headshot"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
