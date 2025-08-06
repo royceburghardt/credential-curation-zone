@@ -21,12 +21,14 @@ export function Hero() {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center animate-fade-in">
-          {/* Profile Image Placeholder */}
+          {/* Profile Image */}
           <div className="mb-8 flex justify-center">
-            <div className="w-32 h-32 bg-white/20 backdrop-blur-sm rounded-full border-4 border-white/30 flex items-center justify-center shadow-glow">
-              <div className="w-24 h-24 bg-white/30 rounded-full flex items-center justify-center">
-                <span className="text-white/80 text-sm font-medium">{t('hero.photoPlaceholder')}</span>
-              </div>
+            <div className="w-32 h-32 rounded-full border-4 border-white/30 overflow-hidden shadow-glow">
+              <img 
+                src="/lovable-uploads/44d2a7ba-70f4-483e-8c79-def71e885bac.png"
+                alt="Professional headshot"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
 
