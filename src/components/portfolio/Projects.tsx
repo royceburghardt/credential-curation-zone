@@ -8,6 +8,15 @@ export function Projects() {
   const { t } = useLanguage();
   const projects = [
     {
+      title: "My Web Page",
+      description: "A professional portfolio website showcasing my skills, experience, and projects. Built with modern React, TypeScript, and Tailwind CSS featuring multilingual support and responsive design.",
+      image: "/api/placeholder/400/250",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Lovable", "Vite"],
+      github: "https://github.com/royceburghardt/portfolio",
+      demo: "#",
+      featured: true
+    },
+    {
       title: "Coffee Shop E-Commerce",
       description: "A modern coffee shop e-commerce platform with product catalog, shopping cart functionality, and responsive design built during my fullstack training.",
       image: "/api/placeholder/400/250",
