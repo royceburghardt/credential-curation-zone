@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
+import { supabase } from "@/lib/supabase";
 
 export function Contact() {
   const { t } = useLanguage();
@@ -29,17 +30,12 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-        },
-        body: JSON.stringify(formData),
+      const { data, error } = await supabase.functions.invoke('send-email', {
+        body: formData
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+      if (error) {
+        throw error;
       }
       
       toast({
