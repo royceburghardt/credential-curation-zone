@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 
 export function Contact() {
   const { t } = useLanguage();
@@ -29,10 +29,11 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/functions/v1/send-email', {
+      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
         },
         body: JSON.stringify(formData),
       });
@@ -122,14 +123,25 @@ export function Contact() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4">
-                  <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
-                    <Github className="h-5 w-5" />
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="hover:bg-primary hover:text-primary-foreground"
+                    asChild
+                  >
+                    <a href="https://github.com/royceburghardt" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
+                    </a>
                   </Button>
-                  <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
-                    <Linkedin className="h-5 w-5" />
-                  </Button>
-                  <Button variant="outline" size="icon" className="hover:bg-primary hover:text-primary-foreground">
-                    <Twitter className="h-5 w-5" />
+                  <Button 
+                    variant="outline" 
+                    size="icon" 
+                    className="hover:bg-primary hover:text-primary-foreground"
+                    asChild
+                  >
+                    <a href="https://linkedin.com/in/royce-burghardt" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                    </a>
                   </Button>
                 </div>
               </CardContent>
