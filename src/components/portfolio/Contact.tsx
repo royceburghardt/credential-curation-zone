@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
-import { supabase, isSupabaseConfigured } from "@/lib/supabase";
+import { supabase } from "@/integrations/supabase/client";
 
 export function Contact() {
   const { t } = useLanguage();
@@ -30,10 +30,6 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      if (!isSupabaseConfigured || !supabase) {
-        throw new Error('Email service is not configured. Please contact the site administrator.');
-      }
-
       const { data, error } = await supabase.functions.invoke('send-email', {
         body: formData
       });
