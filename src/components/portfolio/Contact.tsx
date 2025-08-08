@@ -30,11 +30,15 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
+      console.log('Submitting form data:', formData);
       const { data, error } = await supabase.functions.invoke('send-email', {
         body: formData
       });
 
+      console.log('Supabase response:', { data, error });
+
       if (error) {
+        console.error('Supabase function error:', error);
         throw error;
       }
       
