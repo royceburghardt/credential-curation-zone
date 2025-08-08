@@ -8,13 +8,23 @@ const corsHeaders = {
 }
 
 serve(async (req) => {
+  console.log('Function called with method:', req.method)
+  
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders })
   }
 
   try {
+    console.log('Parsing request body...')
     const { firstName, lastName, email, subject, message } = await req.json()
+    console.log('Request data:', { firstName, lastName, email, subject })
 
+    if (!RESEND_API_KEY) {
+      console.error('RESEND_API_KEY is not set')
+      throw new Error('Email service not configured')
+    }
+
+    console.log('Sending email via Resend...')
     const res = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -22,8 +32,9 @@ serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'portfolio@royceburghardt.com',
+        from: 'Portfolio Contact <onboarding@resend.dev>',
         to: ['royceburghardt@yahoo.com'],
+        reply_to: email,
         subject: subject || 'New Contact Form Submission',
         html: `
           <h2>New Contact Form Submission</h2>
@@ -36,20 +47,25 @@ serve(async (req) => {
       }),
     })
 
+    console.log('Resend response status:', res.status)
+
     if (res.ok) {
       const data = await res.json()
+      console.log('Email sent successfully:', data)
       return new Response(JSON.stringify(data), {
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     } else {
       const error = await res.text()
+      console.error('Resend error:', error)
       return new Response(JSON.stringify({ error }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       })
     }
   } catch (error) {
+    console.error('Function error:', error)
     return new Response(JSON.stringify({ error: error.message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
