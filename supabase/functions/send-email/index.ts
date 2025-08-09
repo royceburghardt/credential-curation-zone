@@ -23,10 +23,14 @@ serve(async (req) => {
     console.log('Parsing request body...')
     const { firstName, lastName, email, subject, message } = await req.json()
     console.log('Request data:', { firstName, lastName, email, subject })
+    console.log('RESEND_API_KEY exists:', !!RESEND_API_KEY)
 
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not set')
-      throw new Error('Email service not configured')
+      return new Response(JSON.stringify({ error: 'Email service not configured - RESEND_API_KEY missing' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
     }
 
     console.log('Sending email via Resend...')
