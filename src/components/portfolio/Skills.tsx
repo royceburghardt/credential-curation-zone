@@ -34,7 +34,8 @@ export function Skills() {
       skills: [
         { name: "Figma", level: 80 },
         { name: "Bootstrap", level: 75 },
-        { name: "Next.js", level: 70 }
+        { name: "Next.js", level: 70 },
+        { name: "GitHub", level: 80 }
       ]
     },
     {
@@ -43,8 +44,7 @@ export function Skills() {
       skills: [
         { name: "German (C1)", level: 85 },
         { name: "English (Native)", level: 100 },
-        { name: "Romanian (B2)", level: 70 },
-        { name: "GitHub", level: 80 }
+        { name: "Romanian (B2)", level: 70 }
       ]
     }
   ];
